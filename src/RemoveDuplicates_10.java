@@ -8,36 +8,23 @@ import java.util.Set;
 
 public class RemoveDuplicates_10 {
 
+
     public static void main(String[] args) {
-        int[] arr = {1, 2, 2, 3, 4, 4, 5, 5, 5};
-        int n = arr.length;
+        int[] arr = {1, 2, 2, 3, 10, 4, 4, 5, 5, 5};
 
-        // Create a new array to store unique elements
-        int[] uniqueArr = new int[n];
-        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int count = 0;
 
-        // Traverse the input array and copy unique elements to uniqueArr
-        for (int i = 0; i < n; i++) {
-            boolean isDuplicate = false;
-
-            // Check if the current element is a duplicate
-            for (int k = 0; k < j; k++) {
-                if (arr[i] == uniqueArr[k]) {
-                    isDuplicate = true;
-                    break;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
                 }
-            }
+             }
 
-            // If the current element is not a duplicate, add it to uniqueArr
-            if (!isDuplicate) {
-                uniqueArr[j] = arr[i];
-                j++;
+            if (count == 0) {
+                System.out.print(arr[i]+ " ");
             }
         }
-
-        // Resize uniqueArr to the correct size (number of unique elements)
-        System.out.println(Arrays.toString(Arrays.copyOf(uniqueArr, j)));
-
     }
 }
 
