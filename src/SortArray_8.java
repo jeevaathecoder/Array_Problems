@@ -5,7 +5,7 @@ public class SortArray_8 {
    public static void selectionSort(int[] arr) {
             int n = arr.length;
 
-            for (int i = 0; i < n - 1; i++) {
+            for (int i = 0; i < n; i++) {
                 int minIndex = i;
 
                 // Find the minimum element in the unsorted subarray
